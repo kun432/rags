@@ -40,26 +40,7 @@ streamlit run 1_🏠_Home.py
 
 ```
 
-## Installation and Setup using Docker
-
-Alternatively, you can use Docker.
-
-Clone this project, go into the `rags` project folder.
-
-By default, we use OpenAI for both the builder agent as well as the generated RAG agent.
-Add `.streamlit/secrets.toml` in the home folder.
-
-Then put the following:
-```
-openai_key = "<openai_key>"
-```
-
-Build & Run.
-
-```
-docker compose build
-docker compose up
-```
+**NOTE**: If you've upgraded the version of RAGs, and you're running into issues on launch, you may need to delete the `cache` folder in your home directory (we may have introduced breaking changes in the stored data structure between versions).
 
 ## Detailed Overview
 
@@ -104,7 +85,7 @@ It will be able to pick the right RAG tools (either top-k vector search or optio
 
 ### Builder Agent
 
-By default the builder agent uses OpenAI. This is defined in the `builder_config.py` file.
+By default the builder agent uses OpenAI. This is defined in the `core/builder_config.py` file.
 
 You can customize this to whatever LLM you want (an example is provided for Anthropic).
 
